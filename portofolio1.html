@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Damara</title>
+    <link rel="stylesheet" href="portofoliomodel1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div id="app">
+    <nav>
+        <div class="logo">Damara<span> Portofolio</span></div>
+        <ul>
+            <li><a href="#home" @click="selectedProject = null">Home</a></li>
+            <li><a href="#projects" @click="selectedProject = null">Proyek</a></li>
+            <li><a href="#contact" @click="selectedProject = null">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="floating-photos">
+            <a href="https://drive.google.com/drive/folders/1wEeYYA9OEF7SqVXI5FCJlXm7wG6RY9iL?usp=sharing" target="_blank" class="pop-photo p1" title="Koleksi Vespa">
+                <img src="foto1.jpg" alt="Vespa">
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1FUvjicafUiy_Hw8rvvh0kS2dMY3lEZhX?usp=sharing" target="_blank" class="pop-photo p2" title="Bermusik">
+                <img src="foto2.jpg" alt="Musik">
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1v67xnDzQbnBnPckITv5T2J0oRmASYq-B?usp=sharing" target="_blank" class="pop-photo p3" title="Pengalaman Kerja">
+                <img src="foto3.jpg" alt="Sertifikasi">
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1jwlCPwA5bd9A8K-Nu0y9xxAmMvtj9Z4A?usp=sharing" target="_blank" class="pop-photo p4" title="Sertifikasi">
+                <img src="foto4.jpg" alt="Pengalaman">
+            </a>
+        </div>
+
+        <div class="hero-content">
+            <h1>Welcome to Damara Portofolio</h1>
+            <p>Business Digital, Data Analyst, Finance, & UI/UX Designer</p>
+            <a href="#projects" class="btn">Lihat Proyek</a>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 v-if="!selectedProject">Proyek Terbaru</h2>
+        
+        <div v-if="!selectedProject" class="project-grid">
+            <div v-for="project in projects" :key="project.id" class="project-card" @click="openProject(project)">
+                <img :src="project.image" alt="Project Image">
+                <h3>{{ project.title }}</h3>
+                <p>Klik untuk detail →</p>
+            </div>
+        </div>
+
+        <div v-else class="project-detail">
+            <button @click="selectedProject = null" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i> Kembali
+            </button>
+            
+            <div class="detail-content">
+                <img :src="selectedProject.detailImage" alt="Detail Project Large">
+                
+                <a :href="selectedProject.link" target="_blank" class="project-link-title">
+                    <h3>{{ selectedProject.title }} <i class="fas fa-external-link-alt"></i></h3>
+                </a>
+
+                <p class="project-desc">{{ selectedProject.fullDesc }}</p>
+                
+                <div class="tech-stack">
+                    <span><strong>Tools:</strong> {{ selectedProject.tools }}</span>
+                </div>
+
+                <div class="action-area">
+                    <a :href="selectedProject.link" target="_blank" class="btn">Kunjungi Situs Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Mari Terhubung</h2>
+        <div class="social-links">
+            <a href="https://github.com/daamaarrrr" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/damara-galuh-pembayun-57a37828a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/damaragaluhh?igsh=MTFldWk4NTE5Y3oxZQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2026 Damara. Semoga cepat berduit</p>
+    </footer>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
