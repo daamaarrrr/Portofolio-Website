@@ -321,3 +321,82 @@ footer {
     }
     .floating-photos a { animation: none; } /* Matikan animasi di HP agar tidak berat */
 }
+/* --- HERO ADJUSTMENT --- */
+.hero {
+    min-height: 120vh; /* Ditambah tingginya agar bisa di-scroll */
+    display: flex;
+    flex-direction: column;
+    padding: 100px 20px;
+}
+
+/* --- PHOTO CONTAINER DI BAWAH TOMBOL --- */
+.shortcut-photos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 80px; /* Jarak dari tombol ke kumpulan foto */
+    flex-wrap: wrap;  /* Agar otomatis turun ke bawah jika layar sempit */
+}
+
+.shortcut-photos a {
+    position: relative; /* Tidak lagi absolute */
+    text-decoration: none;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Variasi animasi agar tidak gerak barengan */
+.shortcut-photos a:nth-child(even) { animation-delay: 1s; }
+.shortcut-photos a:nth-child(3) { animation-delay: 2s; }
+
+.pop-photo img {
+    width: 220px; /* Ukuran yang proposional untuk dijajajrkan */
+    height: 220px;
+    border-radius: 50%;
+    border: 5px solid var(--black);
+    object-fit: cover;
+    box-shadow: 10px 10px 0px var(--black);
+    transition: 0.3s;
+}
+
+/* Hover Effect Tetap Ada */
+.pop-photo:hover img {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 15px 15px 0px var(--pink);
+}
+
+/* Tooltip Judul (Muncul saat Hover) */
+.pop-photo::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    color: var(--black);
+    padding: 5px 15px;
+    font-weight: 900;
+    border: 2px solid var(--black);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.pop-photo:hover::after {
+    opacity: 1;
+}
+
+/* --- RESPONSIVE UNTUK HP --- */
+@media (max-width: 768px) {
+    .shortcut-photos {
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    .pop-photo img {
+        width: 140px; /* Mengecil di HP agar bisa tampil 2 baris */
+        height: 140px;
+        border-width: 3px;
+        box-shadow: 6px 6px 0px var(--black);
+    }
+    
+    .hero h1 { font-size: 2.5rem; }
+}
