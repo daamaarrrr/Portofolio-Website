@@ -20,28 +20,29 @@
     </nav>
 
     <section id="home" class="hero">
-        <div class="floating-photos">
-            <a href="https://drive.google.com/drive/folders/1wEeYYA9OEF7SqVXI5FCJlXm7wG6RY9iL?usp=sharing" target="_blank" class="pop-photo p1" title="Koleksi Vespa">
-                <img src="foto1.jpg" alt="Vespa">
-            </a>
-
-            <a href="https://drive.google.com/drive/folders/1FUvjicafUiy_Hw8rvvh0kS2dMY3lEZhX?usp=sharing" target="_blank" class="pop-photo p2" title="Bermusik">
-                <img src="foto2.jpg" alt="Musik">
-            </a>
-
-            <a href="https://drive.google.com/drive/folders/1v67xnDzQbnBnPckITv5T2J0oRmASYq-B?usp=sharing" target="_blank" class="pop-photo p3" title="Pengalaman Kerja">
-                <img src="foto3.jpg" alt="Sertifikasi">
-            </a>
-
-            <a href="https://drive.google.com/drive/folders/1jwlCPwA5bd9A8K-Nu0y9xxAmMvtj9Z4A?usp=sharing" target="_blank" class="pop-photo p4" title="Sertifikasi">
-                <img src="foto4.jpg" alt="Pengalaman">
-            </a>
-        </div>
-
         <div class="hero-content">
             <h1>Welcome to Damara Portofolio</h1>
             <p>Business Digital, Data Analyst, Finance, & UI/UX Designer</p>
-            <a href="#projects" class="btn">Lihat Proyek</a>
+            
+            <a href="#projects" class="btn" @click="selectedProject = null">Lihat Proyek</a>
+
+            <div class="shortcut-photos">
+                <a href="https://drive.google.com/drive/folders/1wEeYYA9OEF7SqVXI5FCJlXm7wG6RY9iL?usp=sharing" target="_blank" class="pop-photo" title="Koleksi Vespa">
+                    <img src="foto1.jpg" alt="Vespa">
+                </a>
+
+                <a href="https://drive.google.com/drive/folders/1FUvjicafUiy_Hw8rvvh0kS2dMY3lEZhX?usp=sharing" target="_blank" class="pop-photo" title="Bermusik">
+                    <img src="foto2.jpg" alt="Musik">
+                </a>
+
+                <a href="https://drive.google.com/drive/folders/1v67xnDzQbnBnPckITv5T2J0oRmASYq-B?usp=sharing" target="_blank" class="pop-photo" title="Pengalaman Kerja">
+                    <img src="foto3.jpg" alt="Sertifikasi">
+                </a>
+
+                <a href="https://drive.google.com/drive/folders/1jwlCPwA5bd9A8K-Nu0y9xxAmMvtj9Z4A?usp=sharing" target="_blank" class="pop-photo" title="Sertifikasi">
+                    <img src="foto4.jpg" alt="Pengalaman">
+                </a>
+            </div>
         </div>
     </section>
 
@@ -95,6 +96,4 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="script.js"></script>
 </body>
-
 </html>
-
